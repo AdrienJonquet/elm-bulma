@@ -471,6 +471,13 @@ type ImageShape
   | ThreeByTwo
   | SixteenByNine
   | TwoByOne
+  | FourByFive
+  | ThreeByFour
+  | TwoByThree
+  | ThreeByFive
+  | NineBySixteen
+  | OneByTwo
+  | OneByThree
 
 {-| -}
 type ImageSize
@@ -508,6 +515,13 @@ image shape
         ThreeByTwo         -> B.is3by2
         SixteenByNine      -> B.is16by9
         TwoByOne           -> B.is2by1
+        FourByFive         -> B.is4by5
+        ThreeByFour        -> B.is3by4
+        TwoByThree         -> B.is2by3
+        ThreeByFive        -> B.is3by5
+        NineBySixteen      -> B.is9by16
+        OneByTwo           -> B.is1by2
+        OneByThree         -> B.is1by3
         Natural            -> B.none
     ]
 
@@ -536,6 +550,13 @@ easyImage mods attrs src = image mods attrs [ img [ Attr.src src ] [] ]
     -- ThreeByTwo         -> 480 X 320
     -- SixteenByNine      -> 640 X 360
     -- TwoByOne           -> 640 X 320
+    -- FourByFive         -> 480 X 600
+    -- ThreeByFour        -> 480 X 640
+    -- TwoByThree         -> 320 X 480
+    -- ThreeByFive        -> 480 X 800
+    -- NineBySixteen      -> 360 X 640
+    -- OneByTwo           -> 320 X 640
+    -- OneByThree         -> 240 X 720
     -- _                  -> 256 X 256
 
     myEasyPlaceholderImage : Html msg
@@ -561,6 +582,13 @@ easyPlaceholderImage shape attrs
             ThreeByTwo         -> ( 480, 320  )
             SixteenByNine      -> ( 640, 360  )
             TwoByOne           -> ( 640, 320  )
+            FourByFive         -> ( 480, 600  )
+            ThreeByFour        -> ( 480, 640  )
+            TwoByThree         -> ( 320, 480  )
+            ThreeByFive        -> ( 480, 800  )
+            NineBySixteen      -> ( 360, 640  )
+            OneByTwo           -> ( 320, 640  )
+            OneByThree         -> ( 240, 720  )
             _                  -> ( 256, 256  )
       ]
     ]
